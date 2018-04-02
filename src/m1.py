@@ -54,6 +54,7 @@ class CircleChanger(object):
      """
 
     def __init__(self, x, y, radius, fill_color, colors):
+
         """
         What comes in:
           -- self
@@ -83,6 +84,7 @@ class CircleChanger(object):
             :type fill_color: str
             :type colors: sequence of str
         """
+
         self.animation_factor = 1  # Smaller => faster animations
         self.seconds_to_sleep = 0.5  # Default for each call to draw
         # --------------------------------------------------------------
@@ -92,7 +94,7 @@ class CircleChanger(object):
         # --------------------------------------------------------------
 
         ################################################################
-        # TODO: 2.
+        # done 2.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_init   function (below).
         #   Third, implement and test this method.
@@ -102,6 +104,10 @@ class CircleChanger(object):
         # TEST function before implementing the method that it tests.
         ################################################################
 
+
+        self.circle = rg.Circle(rg.Point(x, y), radius)
+        self.circle.fill_color = fill_color
+        self.colors = colors
     def __repr__(self):
         """
         What comes in:
