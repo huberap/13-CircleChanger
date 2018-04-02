@@ -104,8 +104,8 @@ class CircleChanger(object):
         # TEST function before implementing the method that it tests.
         ################################################################
 
-
-        self.circle = rg.Circle(rg.Point(x, y), radius)
+        self.radius = radius
+        self.circle = rg.Circle(rg.Point(x, y), self.radius)
         self.circle.fill_color = fill_color
         self.colors = colors
     def __repr__(self):
@@ -275,6 +275,15 @@ class CircleChanger(object):
         #   Simply   ** ASK FOR HELP **
         #            if this does not make sense to you.
         ################################################################
+        if amount_to_swell_or_shrink  +self.radius < 1:
+            self.radius = 1
+        else:
+            self.radius = self.radius + amount_to_swell_or_shrink
+        randthic = random.randrange(3,16)
+        self.circle.outline_thickness = randthic
+        randcolor = random.randrange(0,len(self.colors))
+        self.circle.fill_color = randcolor
+
 
     def swell_or_shrink_repeatedly(self,
                                    amount_to_swell_or_shrink,
