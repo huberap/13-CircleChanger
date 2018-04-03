@@ -108,6 +108,9 @@ class CircleChanger(object):
         self.circle = rg.Circle(rg.Point(x, y), radius)
         self.circle.fill_color = fill_color
         self.colors = colors
+
+        self.circle.original = rg.Circle(rg.Point(x, y), radius)
+
     def __repr__(self):
         """
         What comes in:
@@ -343,6 +346,10 @@ class CircleChanger(object):
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
+        self.swell_or_shrink_once(amount_to_swell_or_shrink).
+
+        self.circle = self.circle.original
+
 
     def swallow(self, other_circle_changer):
         """
