@@ -278,6 +278,7 @@ class CircleChanger(object):
         #   Simply   ** ASK FOR HELP **
         #            if this does not make sense to you.
         ################################################################
+
         if amount_to_swell_or_shrink + self.circle.radius < 1:
             self.circle.radius = 1
         else:
@@ -341,14 +342,15 @@ class CircleChanger(object):
             :type times_to_swell_or_shrink:  int
         """
         ################################################################
-        # TODO: 5.
+        # Done: 5.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the  run_test_swell_or_shrink_repeatedly  function
         #   (below).  Third, implement and test this method.
         ################################################################
-        self.swell_or_shrink_once(amount_to_swell_or_shrink).
+        for k in range(times_to_swell_or_shrink):
+            self.swell_or_shrink_once(amount_to_swell_or_shrink*(-1)**k)
+            self.draw()
 
-        self.circle = self.circle.original
 
 
     def swallow(self, other_circle_changer):
