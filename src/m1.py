@@ -109,6 +109,7 @@ class CircleChanger(object):
         self.circle.fill_color = fill_color
         self.colors = colors
         self.colorI = fill_color
+        self.tuple = 0
 
         self.circle.original = rg.Circle(rg.Point(x, y), radius)
 
@@ -482,8 +483,10 @@ class CircleChanger(object):
         #   Second, READ the   run_test_change_to_next_color_in_tuple
         #   function (below).  Third, implement and test this method.
         ################################################################
-
-
+        self.circle.fill_color = self.colors[self.tuple]
+        self.tuple = self.tuple + 1
+        if self.tuple == len(self.colors):
+            self.tuple = 0
 ########################################################################
 # The TEST functions for the  CircleChanger  class begin here.
 ########################################################################
